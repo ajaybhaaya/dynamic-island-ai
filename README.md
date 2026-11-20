@@ -1,13 +1,15 @@
 # Windows 11 Desktop "Dynamic Island" AI Companion & Neural Workspace (v4.0)
 
 <p align="center">
+  <a href="https://github.com/ajaybhaaya/dynamic-island-ai/releases/latest/download/DynamicIsland-Windows-x64-Portable.zip">
+    <img src="https://img.shields.io/badge/⚡_Download_Portable_Zip-Windows_x64-B83B24?style=for-the-badge&logo=windows&logoColor=white" alt="Download Dynamic Island Portable Zip">
+  </a>
   <a href="https://github.com/ajaybhaaya/dynamic-island-ai/releases/latest/download/DynamicIsland.exe">
-    <img src="https://img.shields.io/badge/⚡_Direct_Download-DynamicIsland.exe_(Standalone_x64)-B83B24?style=for-the-badge&logo=windows&logoColor=white" alt="Download Dynamic Island">
+    <img src="https://img.shields.io/badge/Standalone_EXE-DynamicIsland.exe-2B3531?style=for-the-badge&logo=windows11&logoColor=white" alt="Download Single EXE">
   </a>
   <a href="https://github.com/ajaybhaaya/dynamic-island-ai/releases/latest">
-    <img src="https://img.shields.io/badge/📦_GitHub_Releases-v1.0.0-4A6B5D?style=for-the-badge&logo=github&logoColor=white" alt="Releases">
+    <img src="https://img.shields.io/badge/📦_All_Releases-v1.0.0-4A6B5D?style=for-the-badge&logo=github&logoColor=white" alt="Releases">
   </a>
-  <img src="https://img.shields.io/badge/Platform-Windows_11_%2F_10_(64--bit)-1D4ED8?style=for-the-badge&logo=windows11" alt="Platform">
   <img src="https://img.shields.io/badge/GPU_Required-NONE_(CPU_60_FPS)-22C55E?style=for-the-badge" alt="CPU Only">
 </p>
 
@@ -17,49 +19,61 @@ Optimized strictly for a **CPU-only Windows 11 environment** (16GB RAM, no dedic
 
 ---
 
-## 🚀 3 Quick Ways to Download & Run
+## 🚀 3 Simple Ways to Download & Run
 
-Choose the option that best fits your workflow:
+Choose the option that fits your setup:
 
-### Option 1: 1-Click Standalone Executable (Recommended for Classmates & Users)
-> **No Python, terminal, or command-line experience required!**
-1. Download **[`DynamicIsland.exe`](https://github.com/ajaybhaaya/dynamic-island-ai/releases/latest/download/DynamicIsland.exe)** directly from the latest GitHub Release.
-2. Double-click `DynamicIsland.exe` to run immediately!
-   * *Protection & Privacy:* The code is pre-compiled into an encrypted binary archive. Zero raw code lines or API keys are exposed.
-   * *Offline Ready:* Hardware Telemetry, Liquid Gauges, Live Network Sparkline, File Shelf, Focus Studio, Quick Notepad, and App Launchers work 100% locally with zero setup!
+### Option 1: 1-Click Portable Download (Recommended for Classmates & Users)
+> **No Python, terminal, or command prompt required!**
+1. Download **[`DynamicIsland-Windows-x64-Portable.zip`](https://github.com/ajaybhaaya/dynamic-island-ai/releases/latest/download/DynamicIsland-Windows-x64-Portable.zip)** (or the single [**`DynamicIsland.exe`**](https://github.com/ajaybhaaya/dynamic-island-ai/releases/latest/download/DynamicIsland.exe)).
+2. Extract the ZIP folder anywhere (e.g. your Desktop or Downloads).
+3. Inside the folder, double-click **`START.bat`** (or `DynamicIsland.exe`)!
+4. *(Optional)* Double-click **`Create_Desktop_Shortcut.bat`** to instantly add Dynamic Island to your **Windows Start Menu** and **Desktop**.
+
+> [!NOTE]
+> **Windows Defender SmartScreen Notice:**
+> Because this is a fresh open-source release without a commercial Microsoft EV certificate, Windows Defender SmartScreen may display a blue dialog (*"Windows protected your PC"*).
+> **To run:** Click **"More info"** $\rightarrow$ Click **"Run anyway"**.
+> The application runs completely in user mode, requires zero admin privileges, and contains 0 telemetry spyware.
 
 ---
 
-### Option 2: 1-Line PowerShell Command (Automatic Install & Launch)
-Open Windows PowerShell and paste this single command:
+### Option 2: 1-Line PowerShell Command (Automatic Setup)
+Open **PowerShell** (press `Win + X` $\rightarrow$ `Terminal` or `PowerShell`) and paste:
 ```powershell
 irm https://raw.githubusercontent.com/ajaybhaaya/dynamic-island-ai/main/install.ps1 | iex
 ```
-*(This automatically clones into `dynamic-island-ai`, ensures Python is installed, installs dependencies, and launches the app!)*
+*(This automatically downloads the repo, verifies Python & dependencies, pins the shortcut to your Windows Start Menu, and starts the app!)*
 
 ---
 
-### Option 3: Clone from GitHub & Run with 1-Click `run.bat`
-If you prefer cloning the source code:
+### Option 3: Clone from GitHub & Run with `START.bat`
+If you want to view and edit the Python source code directly:
 ```powershell
 git clone https://github.com/ajaybhaaya/dynamic-island-ai.git
 cd dynamic-island-ai
-.\run.bat
+.\START.bat
 ```
-*(You can also simply double-click **`run.bat`** in Windows File Explorer!)*
+*(You can also simply double-click **`START.bat`** or **`run.bat`** in Windows File Explorer!)*
 
 > [!TIP]
-> **Why did `cd windows_dynamic_island` or `pip install` fail previously?**
-> 1. **Folder Name:** When cloning from GitHub, the folder is named **`dynamic-island-ai`**, so run `cd dynamic-island-ai`.
-> 2. **Windows PATH:** On many Windows systems, `pip.exe` lives inside Python's `Scripts\` directory which is omitted from Windows PATH by default. Using **`python -m pip install -r requirements.txt`** (or simply using **`run.bat`**) automatically invokes the pip module through Python, eliminating the *"pip is not recognized"* error completely!
+> **Troubleshooting common Windows errors:**
+> * **`Cannot find path 'windows_dynamic_island'`:** The repository is cloned as `dynamic-island-ai`. Run `cd dynamic-island-ai`.
+> * **`pip : The term 'pip' is not recognized`:** On Windows, `pip.exe` lives in Python's `Scripts\` folder which is omitted from Windows PATH by default. Running **`.\START.bat`** or **`python -m pip install -r requirements.txt`** solves this automatically!
 
 ---
 
-## 🔑 Setting Up Your OpenRouter API Key (Optional)
+## 🔑 OpenRouter AI Vision & Chat Setup (Optional)
 
-The app works **100% offline** without any API key for hardware monitoring, network speeds, recent files, timers, notepad, and app windows.
+The entire application runs **100% offline** without any API key for:
+* Hardware Monitoring (RAM %, CPU %, Cache fluid gauges)
+* Live Network Sparkline & TCP Ping Ticker
+* Recent Document Shelf with 1-click execution chips
+* Focus Studio & Sprint Timer
+* Distraction-free Quick Notepad (`NP`)
+* Universal App Windows (`calc`, `notepad`, `cmd`, etc.)
 
-To enable **Screen Vision (Tab 1)** and **AI Assistant Chat (Tab 5)**:
+To activate **Screen Vision (Tab 1)** and **AI Assistant Chat (Tab 5)**:
 1. Copy [`.env.example`](file:///.env.example) to `.env`:
    ```powershell
    copy .env.example .env
@@ -68,11 +82,11 @@ To enable **Screen Vision (Tab 1)** and **AI Assistant Chat (Tab 5)**:
    ```env
    OPENROUTER_API_KEY=sk-or-v1-your-actual-api-key-here
    ```
-3. Alternatively, set a Windows environment variable:
+3. Alternatively, set a Windows user environment variable:
    ```powershell
    [System.Environment]::SetEnvironmentVariable("OPENROUTER_API_KEY", "your-key", "User")
    ```
-*(Your API key is excluded by `.gitignore` and is never committed or leaked).*
+*(Your API key is never committed or published).*
 
 ---
 
@@ -100,8 +114,6 @@ Strictly extracted from the reference artwork:
 
 ## 7 Distinct Feature Tabs & Capabilities
 
-The dynamic island houses **7 dedicated, swipeable and clickable pages**:
-
 1. **Tab 1: AI Companion & OpenRouter Screen Vision**
    * Live procedural AI companion inside pitch-black 66x66 pod with dual glowing eyes and cursor gaze tracking.
    * **OpenRouter Vision Analysis:** `mss` screen capture downscaled to max 1280px, encoded to base64 JPEG, and streamed live via OpenRouter multimodal models (`Claude 3.5 Sonnet`, `GPT-4o`).
@@ -115,65 +127,39 @@ The dynamic island houses **7 dedicated, swipeable and clickable pages**:
 3. **Tab 3: Hardware Telemetry & Live Network Latency Strip**
    * Triple **standalone spherical liquid gauges (58px diameter)** displaying **RAM %** (Terracotta Rust `#B83B24`), **CPU %** (Warm Amber-Peach `#E88D5A`), and **CACHE / Memory Available** (Forest Sage `#4A6B5D`) using live `psutil` sampling.
    * **Dual-sine wave fluid animation** with smooth float lerp (`diff * 0.15`) at 60 FPS.
-   * Oversized Chalk White (`#FFFFFF`) display readouts with soft shadow for crisp readability against any liquid fill level.
    * **Recessed Live Network & Latency Strip Card (`net_strip`):**
-     * **Left:** Live Download (`↓`) and Upload (`↑`) rates formatted with smart compact tabular numbers (`0K`, `420K`, `12.4M`), plus TCP handshake ping (`ms`) with connection health dot (`#22C55E` < 70ms, `#E88D5A` 70–160ms, `#B83B24` > 160ms/offline) and session peak download speed.
-     * **Center:** 30-point rolling **`NetworkSparkline`** painted with smooth Terracotta (`#B83B24`) download curve and soft alpha gradient fill, paired with Pine Sage (`#4A6B5D`) upload curve.
-     * **Right Controls:**
-       * **`[NET / API]` Toggle:** Switch live TCP handshake latency checks between `1.1.1.1` (general web) and `openrouter.ai` (AI API endpoint).
-       * **`[👁 / ✕]` Pill Ticker Toggle:** Toggle visibility of the live network ticker in the collapsed pill on/off on demand.
+     * **Left:** Live Download (`↓`) and Upload (`↑`) rates formatted with compact tabular numbers, plus TCP handshake ping (`ms`) with connection health dot and session peak download speed.
+     * **Center:** 30-point rolling **`NetworkSparkline`** painted with smooth Terracotta (`#B83B24`) download curve and Pine Sage (`#4A6B5D`) upload curve.
+     * **Right Controls:** Toggle ping target host (`1.1.1.1` vs `openrouter.ai`) and toggle collapsed pill ticker visibility.
 
 4. **Tab 4: Interactive Document Shelf (File Chips & Drop-Well)**
-   * Drag and drop files from Windows Explorer onto the recessed pine drop-well (`rgba(94, 111, 104, 0.20)`).
-   * **Clean FileChip Design:** Pill-shaped Warm Parchment chips (`#EAE6DA` fill, `1.2px` `#7A8B84` border, `16px` radius) with hover highlight.
-   * **Dynamic File Iconography:** Left-aligned standard application badges (Red PDF badge, Blue Word DOCX badge, Green Excel XLSX badge, Orange PPTX badge, Cyan Code badge, or system icon provider).
-   * **Truncated Typography:** Primary filename rendered in bold Charcoal (`#2B3531`), truncated with an ellipsis if exceeding `136px`.
-   * **Native 1-Click Launching:** Clicking anywhere on the chip immediately opens the document in its default associated Windows application (`os.startfile`).
-   * **Automatic 4-File FIFO Shelf:** Maintains up to 4 recent files in a balanced 2x2 grid; dropping a 5th file automatically evicts the oldest entry.
+   * Drag and drop files from Windows Explorer onto the recessed pine drop-well.
+   * **Clean FileChip Design:** Pill-shaped Warm Parchment chips (`#EAE6DA` fill, `1.2px` `#7A8B84` border, `16px` radius).
+   * **Dynamic File Iconography:** Left-aligned standard application badges (PDF, Word, Excel, PPTX, Code, or system icon).
+   * **Native 1-Click Launching:** Clicking anywhere on the chip opens the document in its default Windows app (`os.startfile`).
+   * **FIFO Shelf:** Maintains up to 4 recent files in a balanced 2x2 grid.
 
 5. **Tab 5: Quick AI Assistant (Direct OpenRouter Chat)**
-   * Clean, direct AI chat interface. Ask any question on any topic.
-   * Model badge: `GPT-4O-MINI` in Chalk White; `Screen Aware` badge in Forest Sage.
-   * Connected directly to **OpenRouter API** (`openai/gpt-4o-mini`).
+   * Clean, direct AI chat interface. Connected to **OpenRouter API** (`openai/gpt-4o-mini`).
    * Instant responses rendered in Warm Parchment cards with one-click clipboard copying.
 
 6. **Tab 6: Focus & Productivity Studio (Pomodoro / Study & Meeting Timer)**
-   * Dedicated focus and countdown timer for students studying, teachers timing quizzes/lectures, or professionals in sprint sessions.
-   * Oversized Chalk White `25:00` display in Deep Pine-Slate plate (`#3E4A45`).
-   * Presets: **25M FOCUS**, **50M DEEP**, **5M SHORT**, **15M LONG**.
+   * Oversized Chalk White `25:00` display with presets: **25M FOCUS**, **50M DEEP**, **5M SHORT**, **15M LONG**.
    * Interactive **Sprint Task Checklist**: add items, toggle checkmarks, and delete completed tasks.
 
 7. **Tab 7: Neural Workspace Expansion ("Extend" Mode & Dynamic 3-to-6 Tabs)**
-   * Prominent Terracotta CTA button: **`⚡  EXTEND WORKSPACE`** (`260x38px`).
-   * **Quick Notepad (`NP`) Fully Preserved in Extension Workspace:**
-     * The dedicated, distraction-free **Quick Notepad (`NP`)** floating window remains anchored as Node 1 in the spawned Neural Workspace (`310x412px`, with word/char counters, timestamp insertion, auto-save to `workspace_np_notes.txt`, and clear/copy controls).
-   * **Tactile `[+]` Expand Symbol Next to Every Extension Tab:**
-     * A dedicated `[+]` button is positioned right next to **every single extension tab** (`NP`, `AI`, `DASH`, etc.) in Page 7, as well as on the header of each floating window.
-     * Clicking any `[+]` button dynamically expands the workspace tabs from 3 up to **6 tabs** (`APP 4`, `APP 5`, `APP 6`).
-     * Maximum limit of 6 extension tabs is strictly enforced, disabling `+` buttons with a helpful tooltip when the limit is reached.
-     * Extra tabs can be closed individually with the `×` button, automatically re-indexing remaining tabs.
-   * **Universal App Drag-and-Drop & Command Launcher:**
-     * Custom extension windows (`CustomAppNodeWindow`) can host **any application**:
-       * **Drag & Drop:** Drop `.exe` binaries, `.lnk` Windows shortcuts, scripts, or files directly into the window.
-       * **Command / Name Typing:** Type any application command (`calc`, `notepad`, `cmd`, `mspaint`, or web URLs) into the search bar and press Enter or `⚡ OPEN`.
-       * **Quick Chips:** Instant 1-click launchers for `[🔢 Calc]`, `[📝 Notepad]`, `[💻 Terminal]`, `[🎨 Paint]`, and `[🌐 Web]`.
-   * **Pixel-Perfect Window Calibration:**
-     * Automatically strips heavy OS title bars and thick window borders (`WS_CAPTION`, `WS_THICKFRAME`) using the Win32 API.
-     * Embeds external processes seamlessly into the window's zero-margin container via `createWindowContainer(QWindow.fromWinId(hwnd))`.
-     * Real-time calibration on window resize using `MoveWindow` keeps the app perfectly fitted inside the window.
+   * Prominent Terracotta CTA button: **`⚡ EXTEND WORKSPACE`** (`260x38px`).
+   * **Quick Notepad (`NP`):** Distraction-free floating notepad with real-time stats and auto-save.
+   * **Tactile `[+]` Expand Symbol Next to Every Extension Tab:** Dynamically expands workspace tabs from 3 up to **6 tabs** (`APP 4`, `APP 5`, `APP 6`).
+   * **Universal App Host:** Host any Windows application (`calc`, `notepad`, `cmd`, etc.) inside calibrated workspace windows with 1-click launcher chips.
 
 ---
 
-## ⚡ Collapsed Pill Live Network Ticker (`network_worker.py`)
+## ⚡ Collapsed Pill Live Network Ticker
 
-In its compact, collapsed pill state (`264x54px`), the Dynamic Island displays a live, non-blocking telemetry readout to the right of the Pitch-Black AI Bot avatar:
-* **Top Micro-Row:** Monospace throughput readout in fixed-width tabular numerals (`Consolas`, `9.5px Bold`): `↓ 4.2M  ↑ 180K` (zero horizontal layout jitter).
+In its compact pill state (`264x54px`), the Dynamic Island displays a live, non-blocking telemetry readout to the right of the Pitch-Black AI Bot avatar:
+* **Top Micro-Row:** Fixed-width throughput: `↓ 4.2M  ↑ 180K` (zero horizontal jitter).
 * **Bottom Micro-Row:** Anti-aliased 6px connection health dot + TCP latency (`28ms`) + status subtitle (`• AI Online`).
-  * `< 70ms` (Healthy): Crisp Forest Sage Green (`#22C55E`)
-  * `70ms – 160ms` (Moderate): Warm Amber (`#E88D5A`)
-  * `> 160ms` or Disconnected (`--ms`): Terracotta Rust (`#B83B24`) with `OFFLINE` status.
-* **Non-Blocking Architecture:** Background `NetworkMonitorWorker(QThread)` computes `psutil` delta rates every 1.0s and real TCP port 443 handshakes every 3.0s without console flashes.
-* **Toggleable Visibility:** Can be shown/hidden directly via the `[👁]` button in Tab 3.
 
 ---
 
