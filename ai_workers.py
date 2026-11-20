@@ -23,19 +23,27 @@ from PIL import Image
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger("AIWorkers")
 
-# Try loading from local .env if present
+# Try loading from local .env if present (multi-path resilient for both source & frozen exe)
 def _load_local_env():
-    env_file = os.path.join(os.path.dirname(__file__), ".env")
-    if os.path.exists(env_file):
-        try:
-            with open(env_file, "r", encoding="utf-8") as f:
-                for line in f:
-                    line = line.strip()
-                    if line and not line.startswith("#") and "=" in line:
-                        k, v = line.split("=", 1)
-                        os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
-        except Exception:
-            pass
+    candidates = []
+    if getattr(sys, "frozen", False):
+        candidates.append(os.path.join(os.path.dirname(sys.executable), ".env"))
+    candidates.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env"))
+    candidates.append(os.path.join(os.getcwd(), ".env"))
+    candidates.append(os.path.join(os.path.expanduser("~"), ".dynamic_island.env"))
+    candidates.append(os.path.join(os.path.expanduser("~"), ".env"))
+
+    for env_file in candidates:
+        if os.path.exists(env_file):
+            try:
+                with open(env_file, "r", encoding="utf-8") as f:
+                    for line in f:
+                        line = line.strip()
+                        if line and not line.startswith("#") and "=" in line:
+                            k, v = line.split("=", 1)
+                            os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
+            except Exception:
+                pass
 
 _load_local_env()
 DEFAULT_OPENROUTER_KEY = os.getenv("OPENROUTER_API_KEY", "")
@@ -155,9 +163,9 @@ class OpenRouterKeyInfoWorker(QThread):
         self.api_key = api_key.strip() if api_key.strip() else DEFAULT_OPENROUTER_KEY
 
     def run(self):
+        if not self.api_key:
+            return
         try:
-            req = urllib.request.Request(
-                "https://openrouter.ai/api/v1/auth/key",
                 headers={
                     "Authorization": f"Bearer {self.api_key}",
                     "User-Agent": "WindowsDynamicIsland/2.0"
@@ -251,6 +259,10 @@ class ScreenVisionWorker(QThread):
         self.stream = stream
 
     def run(self):
+        if not self.api_key:
+            self.error_occurred.emit("⚠️ OpenRouter API Key Missing. Please set OPENROUTER_API_KEY in .env or as a system environment variable.")
+            return
+
         try:
             self.status_updated.emit("Capturing screen...")
             logger.info("Starting screen capture for OpenRouter vision analysis...")
@@ -540,6 +552,10 @@ class OpenRouterChatWorker(QThread):
     def run(self):
         if not self.question:
             self.finished.emit("Please enter a question to ask the AI agent.", False)
+            return
+
+        if not self.api_key:
+            self.finished.emit("⚠️ OpenRouter API Key Missing. Please set OPENROUTER_API_KEY in .env or as a system environment variable to use AI chat.", False)
             return
 
         try:

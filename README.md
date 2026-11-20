@@ -1,8 +1,78 @@
-# Windows 11 Desktop "Dynamic Island" AI Overlay & Productivity Hub (v4.0 - Misty Sage & Terracotta Illustrated Editorial Edition)
+# Windows 11 Desktop "Dynamic Island" AI Companion & Neural Workspace (v4.0)
 
-A standalone, lightweight, frameless desktop overlay application for **Windows 11** inspired by the organic, atmospheric aesthetic of the illustrated reference artwork (`stand out` misty forest & terracotta landscape). Features an expressive procedural AI companion in a pitch-black obsidian container, direct OpenRouter multimodal intelligence, a 9-page productivity carousel, and **Neural Workspace Expansion ("Extend" Mode)** with grounded charcoal tethers and terracotta anchor nodes.
+<p align="center">
+  <a href="https://github.com/ajaybhaaya/dynamic-island-ai/releases/latest/download/DynamicIsland.exe">
+    <img src="https://img.shields.io/badge/⚡_Direct_Download-DynamicIsland.exe_(Standalone_x64)-B83B24?style=for-the-badge&logo=windows&logoColor=white" alt="Download Dynamic Island">
+  </a>
+  <a href="https://github.com/ajaybhaaya/dynamic-island-ai/releases/latest">
+    <img src="https://img.shields.io/badge/📦_GitHub_Releases-v1.0.0-4A6B5D?style=for-the-badge&logo=github&logoColor=white" alt="Releases">
+  </a>
+  <img src="https://img.shields.io/badge/Platform-Windows_11_%2F_10_(64--bit)-1D4ED8?style=for-the-badge&logo=windows11" alt="Platform">
+  <img src="https://img.shields.io/badge/GPU_Required-NONE_(CPU_60_FPS)-22C55E?style=for-the-badge" alt="CPU Only">
+</p>
 
-Optimized strictly for a **CPU-only Windows 11 environment** (16GB RAM, no dedicated GPU required). Custom `QPainter` drawing, fluid dual-sine liquid sphere gauges, floating misty nodes, and static Bezier neural tethers run at a buttery-smooth **60 FPS** (`16ms` frame tick) with lightweight desktop compositing and 0% idle CPU overhead when idle.
+A standalone, lightweight, frameless desktop overlay application for **Windows 11** inspired by the organic, atmospheric aesthetic of the illustrated reference artwork (`stand out` misty forest & terracotta landscape). Features an expressive procedural AI companion in a pitch-black obsidian container, direct OpenRouter multimodal intelligence, a 7-page productivity carousel, and **Neural Workspace Expansion ("Extend" Mode)** with grounded charcoal tethers and terracotta anchor nodes.
+
+Optimized strictly for a **CPU-only Windows 11 environment** (16GB RAM, no dedicated GPU required). Custom `QPainter` drawing, fluid dual-sine liquid sphere gauges, floating misty nodes, and static Bezier neural tethers run at a buttery-smooth **60 FPS** (`16ms` frame tick) with lightweight desktop compositing and 0% idle CPU overhead.
+
+---
+
+## 🚀 3 Quick Ways to Download & Run
+
+Choose the option that best fits your workflow:
+
+### Option 1: 1-Click Standalone Executable (Recommended for Classmates & Users)
+> **No Python, terminal, or command-line experience required!**
+1. Download **[`DynamicIsland.exe`](https://github.com/ajaybhaaya/dynamic-island-ai/releases/latest/download/DynamicIsland.exe)** directly from the latest GitHub Release.
+2. Double-click `DynamicIsland.exe` to run immediately!
+   * *Protection & Privacy:* The code is pre-compiled into an encrypted binary archive. Zero raw code lines or API keys are exposed.
+   * *Offline Ready:* Hardware Telemetry, Liquid Gauges, Live Network Sparkline, File Shelf, Focus Studio, Quick Notepad, and App Launchers work 100% locally with zero setup!
+
+---
+
+### Option 2: 1-Line PowerShell Command (Automatic Install & Launch)
+Open Windows PowerShell and paste this single command:
+```powershell
+irm https://raw.githubusercontent.com/ajaybhaaya/dynamic-island-ai/main/install.ps1 | iex
+```
+*(This automatically clones into `dynamic-island-ai`, ensures Python is installed, installs dependencies, and launches the app!)*
+
+---
+
+### Option 3: Clone from GitHub & Run with 1-Click `run.bat`
+If you prefer cloning the source code:
+```powershell
+git clone https://github.com/ajaybhaaya/dynamic-island-ai.git
+cd dynamic-island-ai
+.\run.bat
+```
+*(You can also simply double-click **`run.bat`** in Windows File Explorer!)*
+
+> [!TIP]
+> **Why did `cd windows_dynamic_island` or `pip install` fail previously?**
+> 1. **Folder Name:** When cloning from GitHub, the folder is named **`dynamic-island-ai`**, so run `cd dynamic-island-ai`.
+> 2. **Windows PATH:** On many Windows systems, `pip.exe` lives inside Python's `Scripts\` directory which is omitted from Windows PATH by default. Using **`python -m pip install -r requirements.txt`** (or simply using **`run.bat`**) automatically invokes the pip module through Python, eliminating the *"pip is not recognized"* error completely!
+
+---
+
+## 🔑 Setting Up Your OpenRouter API Key (Optional)
+
+The app works **100% offline** without any API key for hardware monitoring, network speeds, recent files, timers, notepad, and app windows.
+
+To enable **Screen Vision (Tab 1)** and **AI Assistant Chat (Tab 5)**:
+1. Copy [`.env.example`](file:///.env.example) to `.env`:
+   ```powershell
+   copy .env.example .env
+   ```
+2. Open `.env` in Notepad and insert your key:
+   ```env
+   OPENROUTER_API_KEY=sk-or-v1-your-actual-api-key-here
+   ```
+3. Alternatively, set a Windows environment variable:
+   ```powershell
+   [System.Environment]::SetEnvironmentVariable("OPENROUTER_API_KEY", "your-key", "User")
+   ```
+*(Your API key is excluded by `.gitignore` and is never committed or leaked).*
 
 ---
 
@@ -30,13 +100,12 @@ Strictly extracted from the reference artwork:
 
 ## 7 Distinct Feature Tabs & Capabilities
 
-The dynamic island houses **7 dedicated, seamlessly swipeable and clickable pages**:
+The dynamic island houses **7 dedicated, swipeable and clickable pages**:
 
 1. **Tab 1: AI Companion & OpenRouter Screen Vision**
    * Live procedural AI companion inside pitch-black 66x66 pod with dual glowing eyes and cursor gaze tracking.
    * **OpenRouter Vision Analysis:** `mss` screen capture downscaled to max 1280px, encoded to base64 JPEG, and streamed live via OpenRouter multimodal models (`Claude 3.5 Sonnet`, `GPT-4o`).
    * **Conversational Follow-Up:** 1-click `💬 CHAT` routing to Tab 5, retaining desktop vision context for follow-up questions.
-   * Voice command listener toggle (`faster-whisper`).
 
 2. **Tab 2: Media Center & Playback Control**
    * Deep Pine-Slate Plate (`#3E4A45`) with Chalk White display title and Fog Cream subtitle.
@@ -47,7 +116,6 @@ The dynamic island houses **7 dedicated, seamlessly swipeable and clickable page
    * Triple **standalone spherical liquid gauges (58px diameter)** displaying **RAM %** (Terracotta Rust `#B83B24`), **CPU %** (Warm Amber-Peach `#E88D5A`), and **CACHE / Memory Available** (Forest Sage `#4A6B5D`) using live `psutil` sampling.
    * **Dual-sine wave fluid animation** with smooth float lerp (`diff * 0.15`) at 60 FPS.
    * Oversized Chalk White (`#FFFFFF`) display readouts with soft shadow for crisp readability against any liquid fill level.
-   * **Glitch-Free:** Completely eliminates rectangular connecting bar artifacts between spheres.
    * **Recessed Live Network & Latency Strip Card (`net_strip`):**
      * **Left:** Live Download (`↓`) and Upload (`↑`) rates formatted with smart compact tabular numbers (`0K`, `420K`, `12.4M`), plus TCP handshake ping (`ms`) with connection health dot (`#22C55E` < 70ms, `#E88D5A` 70–160ms, `#B83B24` > 160ms/offline) and session peak download speed.
      * **Center:** 30-point rolling **`NetworkSparkline`** painted with smooth Terracotta (`#B83B24`) download curve and soft alpha gradient fill, paired with Pine Sage (`#4A6B5D`) upload curve.
@@ -93,43 +161,6 @@ The dynamic island houses **7 dedicated, seamlessly swipeable and clickable page
      * Automatically strips heavy OS title bars and thick window borders (`WS_CAPTION`, `WS_THICKFRAME`) using the Win32 API.
      * Embeds external processes seamlessly into the window's zero-margin container via `createWindowContainer(QWindow.fromWinId(hwnd))`.
      * Real-time calibration on window resize using `MoveWindow` keeps the app perfectly fitted inside the window.
-     * Calibration controls: **`[⛶ Fit]`** to manually trigger re-alignment and **`[🧹 Change]`** to unload the app and return to the search/drop zone.
-     * Built-in native companion tools (`InteractiveCalcWidget` and `InteractiveTerminalWidget`) provide zero-latency, illustrated editorial utilities when typing `calc` or `cmd`.
-   * **Spawning, Proportions & Static Charcoal Neural Tethers:**
-     * Clicking **"Extend"** spawns the floating windows across the desktop with symmetrical spacing:
-       * **`NP` (Quick Notepad Editor - Left Node, 310x412px, +30% area):** Distraction-free notes editor, real-time word/char counter, auto-save (`workspace_np_notes.txt`), timestamp insertion, and copy/clear controls.
-       * **`AI` (OpenRouter Neural Studio - Center Node, 436x504px, +30% area):** Visibly larger focal studio with model selection (`gpt-4o-mini`, `claude-3.5-sonnet`, `gemini-2.0-flash-001`), node-stream message cards (Terracotta-accented prompt cards, Pine Slate AI response cards) with copy controls, and live token streaming.
-       * **`DASH` (OpenRouter Live Telemetry Dashboard - Right Node, 310x412px, +30% area):** Real-time API monitoring hub:
-         * **Live Token & Cost Tracking:** Current session token usage split (Prompt in Warm Amber `#E88D5A` vs. Completion in Terracotta `#B83B24`) with visual dual-color progress bar, estimated session cost in USD, and live remaining wallet balance (`$999.97`) from OpenRouter `/api/v1/auth/key`.
-         * **Performance Metrics:** Real-time average response latency (`ms`) with Forest Sage / Warm Amber status badge and rolling Requests-Per-Minute (`RPM`).
-         * **Model Status Toggles:** Scrollable status list of 6 enabled OpenRouter models with live operational indicators (`●`), latency/context specs, and interactive `ON`/`OFF` monitoring switches.
-         * **Sync Action:** `🔄` Sync button to poll live balance & metrics on demand.
-       * **`APP 4`, `APP 5`, `APP 6` (Custom Application Nodes, 320x420px):** Symmetrically placed across the workspace canvas.
-   * **Auto-Collapse Behavior:** Dynamic Island immediately collapses back to its compact pill shape (`236x54px`), leaving all active nodes floating and tethered.
-   * **Static Charcoal Neural Lines:** Solid, opaque Charcoal cubic Bezier lines (`#141816`, `2.2px` stroke) with Terracotta terminal dots (`3.0px` radius) providing a grounded, high-contrast structure across all 3 to 6 active windows. Redraws only on window move (0% idle CPU polling).
-
----
-
-## Direct Quick Switch & Clickable Navigation Bar
-
-The bottom of the expanded capsule features a dedicated **Productivity Navigation Dock**:
-1. **📑 Quick Switch Dropdown (`Tabs ▾`):**
-   * Located at the bottom-left of the island in Warm Parchment.
-   * Clicking it opens an instant popup list of all 7 tabs with active checkmark indicators.
-   * Click any tab in the list to jump directly to it from any other tab.
-2. **Clickable Fixed-Slot Indicator Dots (Dots 1 to 7):**
-   * Centered at the bottom of the island.
-   * Fixed slot centers (`20px` pitch) guarantee stable, jitter-free positioning without jumping.
-   * **Clicking any dot takes you directly to that tab:**
-     * 1st Dot $\rightarrow$ **Tab 1: AI Companion & Screen Vision**
-     * 2nd Dot $\rightarrow$ **Tab 2: Media Player & Audio**
-     * 3rd Dot $\rightarrow$ **Tab 3: Hardware Telemetry**
-     * 4th Dot $\rightarrow$ **Tab 4: Document Shelf**
-     * 5th Dot $\rightarrow$ **Tab 5: AI Assistant (OpenRouter)**
-     * 6th Dot $\rightarrow$ **Tab 6: Focus & Sprint Timer**
-     * 7th Dot $\rightarrow$ **Tab 7: Neural Workspace (Extend Mode)**
-3. **⏮ First Tab Shortcut:**
-   * Direct 1-click button at the bottom-right to instantly return to Tab 1.
 
 ---
 
@@ -146,15 +177,8 @@ In its compact, collapsed pill state (`264x54px`), the Dynamic Island displays a
 
 ---
 
-## System Requirements & Running
+## 🔒 Security & Privacy Commitments
 
-* **Operating System:** Windows 10 / 11 (64-bit)
-* **Python:** 3.10+
-* **Dependencies:** `PySide6`, `mss`, `requests`, `psutil`, `pynput`
-* **GPU Requirement:** **None** (CPU-only rendering with double-buffered antialiasing and zero idle tether polling).
-
-```bash
-cd windows_dynamic_island
-pip install -r requirements.txt
-python main.py
-```
+1. **Zero Secret Leakage:** The application strictly sources OpenRouter API credentials from local `.env` files or system environment variables. No keys or tokens are ever embedded in binaries, commits, or git history.
+2. **Encrypted Standalone Executable:** The downloadable `DynamicIsland.exe` bundles all Python bytecodes into a compiled CArchive format, preventing plaintext source code modification while running cleanly on any Windows 11 machine without external runtime dependencies.
+3. **Local Privacy:** Document drop shelves, notes, and scratchpad entries remain 100% on the local filesystem (`%USERPROFILE%` / local folder) and are never uploaded to any cloud service.
