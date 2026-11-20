@@ -4,6 +4,7 @@
 # ==============================================================================
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force -ErrorAction SilentlyContinue
 $ErrorActionPreference = "Continue"
 
 Write-Host ""
@@ -65,6 +66,26 @@ if (Get-Command py -ErrorAction SilentlyContinue) {
 
 Write-Host "[2/3] Verifying dependencies using: $pyCmd -m pip..." -ForegroundColor Green
 & $pyCmd -m pip install --quiet -r requirements.txt
+
+# Create Desktop & Start Menu shortcut
+try {
+    $currentPath = (Get-Location).Path
+    $ws = New-Object -ComObject WScript.Shell
+    $d = $ws.CreateShortcut([IO.Path]::Combine($env:USERPROFILE, 'Desktop', 'Dynamic Island.lnk'))
+    $d.TargetPath = [IO.Path]::Combine($currentPath, 'run.bat')
+    $d.WorkingDirectory = $currentPath
+    $d.Description = 'Windows 11 Dynamic Island'
+    $d.Save()
+
+    $sm = [Environment]::GetFolderPath('StartMenu')
+    $p = Join-Path $sm 'Programs'
+    $s = $ws.CreateShortcut((Join-Path $p 'Dynamic Island.lnk'))
+    $s.TargetPath = [IO.Path]::Combine($currentPath, 'run.bat')
+    $s.WorkingDirectory = $currentPath
+    $s.Description = 'Windows 11 Dynamic Island'
+    $s.Save()
+    Write-Host "[OK] Added Dynamic Island to Windows Start Menu and Desktop!" -ForegroundColor Green
+} catch {}
 
 # 3. Launch Application
 Write-Host ""

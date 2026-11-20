@@ -166,6 +166,8 @@ class OpenRouterKeyInfoWorker(QThread):
         if not self.api_key:
             return
         try:
+            req = urllib.request.Request(
+                "https://openrouter.ai/api/v1/auth/key",
                 headers={
                     "Authorization": f"Bearer {self.api_key}",
                     "User-Agent": "WindowsDynamicIsland/2.0"
